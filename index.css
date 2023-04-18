@@ -53,26 +53,6 @@ td {
     text-decoration: underline;
 }
 
-button {
-    padding: 15px;
-    background: var(--menus);
-    color: var(--title);
-    border-radius: 10px;
-    font-size: 20px;
-
-    border: 3px solid var(--menus);
-}
-
-button:hover {
-    color: var(--hover-color1);
-
-    background: var(--submenus);
-
-    transition: 1.3s;
-
-    border: 3px solid var(--text-first);
-}
-
 .button__add {
     display: flex;
     justify-content: center;
@@ -80,17 +60,109 @@ button:hover {
     margin-top: 30px;
 }
 
-.modal__window {
+.modal {
     position: absolute;
-    display: flex;
-    justify-content: center;
 
-    background: red;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
 
-    width: 400px;
-    height: 800px;
+    min-width: 100vw;
+    min-height: 100vh;
 
-    left: 34%;
+    background: rgba(0, 0, 0, 0.8);
 
     display: none;
+}
+
+.modal__window {
+    position: absolute;
+    background: var(--menus);
+    color: var(--text-first);
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    width: 400px;
+
+    display: none;
+
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal__inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__title {
+    color: var(--title);
+
+    font-size: 30px;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.modal__inputs input {
+    background: var(--submenus);
+    border: 0px;
+
+    border-radius: 5px;
+
+    margin-bottom: 10px;
+
+    padding: 10px 5px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    color: var(--text-first);
+}
+
+.modal__button {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+
+#ready__button, #button {
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    text-align: center;
+    background: var(--submenus);
+
+    border: 3px solid var(--submenus);
+    border-radius: 5px;
+
+    text-align: center;
+
+    outline: none;
+
+    color: var(--text-first);
+    padding: 10px;
+
+    font-size: 20px;
+}
+
+#ready__button:hover, #button:hover {
+    color: var(--hover-color1);
+
+    border: 3px solid var(--hover-color1) !important;
+
+    transition: 0.3s;
+}
+
+#button {
+    background: var(--menus) !important;
+    border: 3px solid var(--menus) !important;
 }

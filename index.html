@@ -18,9 +18,22 @@
     <section class="button__add">
         <button id = "button"> Добавить запись </button>
     </section>
-    <section class = "modal__window">
-        123
-    </section>
+    <div class="modal">
+        <section class = "modal__window">
+            <p class="modal__title">
+                Добавление записи
+            </p>
+            <div class="modal__inputs">
+                <input class = "INP__FCS" type="text" placeholder="Введите ФИО">
+                <input class = "INP_FAC" type="text" placeholder="Введите факультет">
+                <input type="text" class="INP__DOB" placeholder="Введите дату рождения (y-m-d)">
+                <input type="text" class="INP_YOS" placeholder="Введите дату начала учёбы">    
+            </div>
+            <div class="modal__button">
+                <button id = "ready__button">Готово</button>
+            </div>
+        </section>
+    </div>
     <main>
         <table id = "table">
             <tr class="titles">

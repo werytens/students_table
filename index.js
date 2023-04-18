@@ -28,7 +28,13 @@ const array = [
 ]
 
 document.getElementById("button").addEventListener("click", () => {
-    document.querySelector(".modal__window").style.display = "flex";
+    document.querySelector(".modal__window").style.display = "block";
+    document.querySelector(".modal").style.display = "block";
+})
+
+document.getElementById("ready__button").addEventListener("click", () => {
+    document.querySelector(".modal__window").style.display = "none";
+    document.querySelector(".modal").style.display = "none";
 })
 
 document.addEventListener("DOMContentLoaded", (event) => {
