@@ -35,8 +35,14 @@ document.getElementById("button").addEventListener("click", () => {
 
 document.getElementById("ready__button").addEventListener("click", (event) => {
     event.preventDefault();
-    
     createForInput();
+})
+
+document.getElementById("cancel__button").addEventListener("click", (event) => {
+    event.preventDefault();
+    
+    document.querySelector(".modal__window").style.display = "none";
+    document.querySelector(".modal").style.display = "none";
 })
 
 document.addEventListener("DOMContentLoaded", (event) => {

@@ -134,7 +134,7 @@ td {
 
 
 
-#ready__button, #button {
+.button__in__modal, #button {
     margin-top: 20px;
     margin-bottom: 30px;
 
@@ -154,7 +154,7 @@ td {
     font-size: 20px;
 }
 
-#ready__button:hover, #button:hover {
+.button__in__modal:hover, #button:hover {
     color: var(--hover-color1);
 
     border: 3px solid var(--hover-color1) !important;
@@ -162,9 +162,12 @@ td {
     transition: 0.3s;
 }
 
-#button {
-    background: var(--menus) !important;
-    border: 3px solid var(--menus) !important;
+.button__in__modal {
+    border: 3px solid var(--submenus);
+}
+
+#ready__button {
+    margin-right: 5px;
 }
 
 .filter__input {
