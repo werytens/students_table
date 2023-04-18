@@ -49,8 +49,6 @@ td {
 
 .titles {
     color: var(--title);
-
-    text-decoration: underline;
 }
 
 .button__add {

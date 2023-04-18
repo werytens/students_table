@@ -54,19 +54,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
 })
 
 buttons.forEach(element => element.addEventListener("click", () => {
-    switch (element.innerHTML) {
-        case "FCs":
-            sortStudent(array, "surname");
-            break;
-        case "Faculty":
-            sortStudent(array, "faculty");
-            break;
-        case "Date Of Birthday":
-            sortStudent(array, "date");
-            break;
-        case "Years Of Study":
-            sortStudent(array, "startYear");
-            break;
+    if (element.innerHTML == "FCs" || element.innerHTML == "FCs 🠗" || element.innerHTML == "FCs 🠕") {
+        sortStudent(array, "surname", element, "FCs");
+        return
+        }
+    if (element.innerHTML == "Faculty" || element.innerHTML == "Faculty 🠗" || element.innerHTML == "Faculty 🠕") {
+        sortStudent(array, "surname", element, "Faculty");
+        return
+        }
+    if (element.innerHTML == "Date Of Birthday" || element.innerHTML == "Date Of Birthday 🠗" || element.innerHTML == "Date Of Birthday 🠕") {
+        sortStudent(array, "date", element, "Date Of Birthday");
+        return
+        }
+    if (element.innerHTML == "Years Of Study" || element.innerHTML == "Years Of Study 🠗" || element.innerHTML == "Years Of Study 🠕") {
+        sortStudent(array, "startYear", element, "Years Of Study");
+        return
     }
 }))
 
