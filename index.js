@@ -1,9 +1,5 @@
 import { createStudent } from "./modules/createStudent.js";
-
-import { dobSort } from "./modules/sortModules/dobSort.js";
-import { facultySort } from "./modules/sortModules/facultySort.js";
-import { fcsSort } from "./modules/sortModules/fcsSort.js";
-import { yosSort } from "./modules/sortModules/yosSort.js";
+import { sortStudent } from "./modules/sortStudent.js";
 
 const buttons = [document.querySelector(".fcs"), document.querySelector(".faculty"), document.querySelector(".dob"), document.querySelector(".yos")]
 const array = [
@@ -15,12 +11,12 @@ const array = [
         startYear: 2021,
         faculty: "ИСиП(п)"
     }, {
-        name: "Макс",
-        surname: "Алипатов",
-        lastname: "Сергеевич",
-        date: new Date("2004-11-25"),
+        name: "Айзек",
+        surname: "Апабанов",
+        lastname: "Алидиевич",
+        date: new Date("1997-12-01"),
         startYear: 2000,
-        faculty: "ИСиП(п)"
+        faculty: "КСК"
     }, {
         name: "Роман",
         surname: "Семёнов",
@@ -31,6 +27,10 @@ const array = [
     }
 ]
 
+document.getElementById("button").addEventListener("click", () => {
+    document.querySelector(".modal__window").style.display = "flex";
+})
+
 document.addEventListener("DOMContentLoaded", (event) => {
     createStudent(array);
 })
@@ -38,16 +38,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
 buttons.forEach(element => element.addEventListener("click", () => {
     switch (element.innerHTML) {
         case "FCs":
-            fcsSort(array, array);
+            sortStudent(array, "surname");
             break;
         case "Faculty":
-            facultySort();
+            sortStudent(array, "faculty");
             break;
         case "Date Of Birthday":
-            dobSort();
+            sortStudent(array, "date");
             break;
         case "Years Of Study":
-            yosSort();
+            sortStudent(array, "startYear");
             break;
     }
 }))
