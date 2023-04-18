@@ -18,8 +18,8 @@ export function createForInput(array) {
     }
 
     let newStudent = {
-        name: FCS[0],
-        surname: FCS[1],
+        name: FCS[1],
+        surname: FCS[0],
         lastname: FCS[2],
         date: new Date(modalInputsValues[1].value),
         startYear: Number(modalInputsValues[2].value),
