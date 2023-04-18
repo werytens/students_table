@@ -1,5 +1,6 @@
 import { createStudent } from "./modules/createStudent.js";
 import { sortStudent } from "./modules/sortStudent.js";
+import { createForInput } from "./modules/createForInput.js";
 
 const buttons = [document.querySelector(".fcs"), document.querySelector(".faculty"), document.querySelector(".dob"), document.querySelector(".yos")]
 const array = [
@@ -32,9 +33,10 @@ document.getElementById("button").addEventListener("click", () => {
     document.querySelector(".modal").style.display = "block";
 })
 
-document.getElementById("ready__button").addEventListener("click", () => {
-    document.querySelector(".modal__window").style.display = "none";
-    document.querySelector(".modal").style.display = "none";
+document.getElementById("ready__button").addEventListener("click", (event) => {
+    event.preventDefault();
+    
+    createForInput();
 })
 
 document.addEventListener("DOMContentLoaded", (event) => {
