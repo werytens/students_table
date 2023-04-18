@@ -15,6 +15,7 @@ export function createStudent(array) {
         tr.append(td);
 
         td = document.createElement("td");
+        td.classList.add("dateForBirthday")
         let day = item.date.getDate();
         let month = item.date.getMonth() + 1;
         String(day).length == "1" ? day = `0${day}` : null

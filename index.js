@@ -2,7 +2,11 @@ import { createStudent } from "./modules/createStudent.js";
 import { sortStudent } from "./modules/sortStudent.js";
 import { createForInput } from "./modules/createForInput.js";
 
+import { searchForFRCS } from './modules/searchModules/searchForFRCS.js'
+import { searchForFaculty, searchForDOB, searchForYOS } from "./modules/searchModules/searchForOther.js";
+
 const buttons = [document.querySelector(".fcs"), document.querySelector(".faculty"), document.querySelector(".dob"), document.querySelector(".yos")]
+const inputs = document.querySelectorAll(".filter__input");
 const array = [
     {
         name: "Максим",
@@ -35,7 +39,7 @@ document.getElementById("button").addEventListener("click", () => {
 
 document.getElementById("ready__button").addEventListener("click", (event) => {
     event.preventDefault();
-    createForInput();
+    createForInput(array);
 })
 
 document.getElementById("cancel__button").addEventListener("click", (event) => {
@@ -63,5 +67,22 @@ buttons.forEach(element => element.addEventListener("click", () => {
         case "Years Of Study":
             sortStudent(array, "startYear");
             break;
+    }
+}))
+
+inputs.forEach(element => element.addEventListener("input", () => {
+    switch (element.placeholder) {
+        case "ФИО":
+            searchForFRCS(array, element.value);
+            break;
+        case "Факультет":
+            searchForFaculty(array,  element.value)
+            break;
+        case "День рождения":
+            searchForDOB(array, element.value)
+            break;
+        case "Обучение":
+            searchForYOS(array,  element.value)
+            break;                        
     }
 }))
