@@ -59,7 +59,7 @@ buttons.forEach(element => element.addEventListener("click", () => {
         return
         }
     if (element.innerHTML == "Faculty" || element.innerHTML == "Faculty 🠗" || element.innerHTML == "Faculty 🠕") {
-        sortStudent(array, "surname", element, "Faculty");
+        sortStudent(array, "faculty", element, "Faculty");
         return
         }
     if (element.innerHTML == "Date Of Birthday" || element.innerHTML == "Date Of Birthday 🠗" || element.innerHTML == "Date Of Birthday 🠕") {
