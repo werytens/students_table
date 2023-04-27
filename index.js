@@ -16,19 +16,19 @@ const array = [
         startYear: 2021,
         faculty: "ИСиП(п)"
     }, {
-        name: "Айзек",
-        surname: "Апабанов",
-        lastname: "Алидиевич",
-        date: new Date("1997-12-01"),
-        startYear: 2000,
-        faculty: "КСК"
-    }, {
         name: "Роман",
         surname: "Семёнов",
         lastname: "Сергеевич",
         date: new Date("2005-05-06"),
         startYear: 2021,
         faculty: "ИСиП(п)"
+    }, {
+        name: "Алексей",
+        surname: "Черников",
+        lastname: "Викторович",
+        date: new Date("2001-10-29"),
+        startYear: 2010,
+        faculty: "ПКС 1/1"
     }
 ]
 
@@ -50,7 +50,16 @@ document.getElementById("cancel__button").addEventListener("click", (event) => {
 })
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    createStudent(array);
+    if (JSON.parse(localStorage.getItem("0")).length == 0) {
+        createStudent(array);
+    } else {
+        let arrayTwo = JSON.parse(localStorage.getItem("0"));
+
+        createStudent(arrayTwo);
+    }
+
+    console.log(array);
+    console.log(JSON.parse(localStorage.getItem("0")));
 })
 
 buttons.forEach(element => element.addEventListener("click", () => {
