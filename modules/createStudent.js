@@ -16,6 +16,7 @@ export function createStudent(array) {
 
         td = document.createElement("td");
         td.classList.add("dateForBirthday")
+        item.date =new Date(item.date);
         let day = item.date.getDate();
         let month = item.date.getMonth() + 1;
         String(day).length == "1" ? day = `0${day}` : null
@@ -28,5 +29,6 @@ export function createStudent(array) {
         year > 4 ? year = "Завершил" : year = `${year} курс`
         td.innerHTML = `${item.startYear} - ${item.startYear + 4} (${year})`
         tr.append(td);
+
     })
 }
